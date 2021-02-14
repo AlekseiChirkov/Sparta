@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'shop/css/desktop/profile.css' %}">
+  <script src="{% static 'shop/js/VanillaQR.min.js' %}"></script>
+  <script type="text/javascript">
+    var user = '{{request.user}}'
+    var id = '{{user.id}}'
+
+    function getToken(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+          }
+        }
+        return cookieValue;
+      }
+    const csrftoken = getToken('csrftoken');
+  </script>
+</head>
+<body>
+  <div class="main_wrapper">
+    <div class="signup_container">
+      <div class="signup_header__menu">
+        <ul class="signup_header__list left">
+          <li>
+            <a href="/" class="signup_header__link">Главная</a>
+          </li>
+          <li>
+            <a href="/profile/cart/{{user_id}}" class="signup_header__link active_link">Профиль</a>
+          </li>
+          <li>
+            <a href="/#gallery" class="signup_header__link">Галерея</a>
+          </li>
+          <li>
+        </ul>
+        <img src="{% static 'shop/img/Logos/VectorheaderLogo.png' %}" alt="" class="header_logo">
+        <ul class="signup_header__list right">
+          <li>
+            <a href="/#contacts" class="signup_header__link">Контакты</a>
+          </li>
+          <li>
+            <a href="/shop" class="signup_header__link">Магазин</a>
+          </li>
+          <li>
+            <a href="/user/cart/" class="signup_header__link">Корзина</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+      <div class="container">
+          <div class="header">
+              <div class="header__body">
+                  <a href="#" class="header__logo">
+                      <img id="logo" src="{% static 'shop/img/Logos/WS@72x-8.png' %}">
+                  </a>
+                  <div class="header__burger">
+                      <span></span>
+                  </div>
+                  <nav class="header__menu">
+                      <ul class="header__list">
+                          <li>
+                              <a href="/" class="header__link">Главная</a>
+                          </li>
+                          <li>
+                              <a href="/profile/cart/{{user_id}}" class="header__link">Профиль</a>
+                          </li>
+                          <li>
+                              <a href="/#gallery" class="header__link">Галерея</a>
+                          </li>
+                          <li>
+                              <a href="/#contacts" class="header__link">Контакты</a>
+                          </li>
+                          <li>
+                              <a href="/shop" class="header__link">Магазин</a>
+                          </li>
+                          <li>
+                              <a href="/user/cart/" class="header__link">Корзина</a>
+                          </li>
+                      </ul>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="content">
+    <div class="profile">
+    {% if user.is_authenticated %}
+      {% if user.profile.image %}
+        <img src="{{ user.profile.image.url }}" alt="" class="avatar">
+      {% else %}
+        <img src="" alt="Загрузите ваш аватар" class="avatar">
+      {% endif %}
+        <div class="user-info">
+        {{ name }}<br>{{ surname }}<br>Возраст:<br>{{ age }} лет
+        </div>
+        <div class="logout-form">
+            <button class="edit" onclick="openForm()">Редактировать профиль</button>
+            <form method="post" action="/accounts/logout/" class="logout-form">
+                {% csrf_token %}
+                <button class="logout">Выйти</button>
+            </form>
+        </div>
+    {% endif %}
+    </div>
+
+    <div class="subscription">
+        <div id="subscription" class="subscription__card">
+            <div class="abonement">Абонемент</div>
+            <div class="qr" id="qr"></div>
+            <div class="visits">
+                {% if subscription %}
+                    {% if dates %}
+                        {% for date in dates %}
+                            <div class="dates">
+                                <h5>Посещение<br>№{{ forloop.counter }}</h5>
+                                <h6>{{ date }}</h6>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="dates">
+                            <h6>Здесь будут показаны даты ваших посещений</h6>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <div class="dates">
+                        <h6 class="no-sub">
+                            У вас нет действующего абонемента
+                        </h6>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="form-popup" id="myForm">
+      <form action="/user/profile/{{user_id}}/" class="form-container" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <h2>Редактирование профиля</h2>
+          <p>Имя: <br>{{ update.name }}</p>
+          <p>Фамилия: <br>{{ update.surname }}</p>
+          <p>Телефон: <br>{{ update.phone }}</p>
+          <p>Дата рождения: <br>{{ update.birthday }}</p>
+          <p>Аватар<br>{{ update.image }}</p>
+          <button type="submit" class="edit-btn">Изменить</button>
+      </form>
+      <button class="close-btn cancel" onclick="closeForm()">Закрыть</button>
+  </div>
+
+
+  <script>
+    var qr = new VanillaQR({
+        url: `https://spartagym.com.kg/subscription-check/?userId={{user.id}}`,
+        size: 200,
+        colorLight: "#ffffff",
+        colorDark: "#000000",
+        toTable: false,
+        ecclevel: 1,
+        noBorder: true,
+        borderSize: 4,
+      });
+
+    document.getElementById("qr").appendChild(qr.domElement);
+  </script>
+  <script src="{% static 'shop/js/header.js' %}"></script>
+  <script src="{% static 'shop/js/cart.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+          integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+</body>
+</html>

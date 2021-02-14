@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'shop/css/desktop/qr_css.css' %}" />
+    <title>Абонемент</title>
+  </head>
+  <body>
+    <div class="result-container" id="abonementScanResult">
+      <img src="{% static 'shop/img/loaders/loader.gif' %}" class="abonement-loader" />
+    </div>
+    <script src="{% static 'shop/js/qr_js.js' %}"></script>
+  </body>
+</html>

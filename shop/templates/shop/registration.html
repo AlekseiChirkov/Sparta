@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'shop/css/desktop/registration.css' %}">
+</head>
+<body>
+    <div class="main_wrapper">
+      <div class="signup_container">
+        <div class="signup_header__menu">
+          <ul class="signup_header__list left">
+            <li>
+              <a href="/" class="signup_header__link">Главная</a>
+            </li>
+            <li>
+              {% if not user_id %}
+                  <a href="/users/signup/" class="signup_header__link">Профиль</a>
+              {% else %}
+                  <a href="/user/profile/{{user_id}}/" class="signup_header__link">Профиль</a>
+              {% endif %}
+            </li>
+            <li>
+              <a href="/#gallery" class="signup_header__link">Галерея</a>
+            </li>
+            <li>
+          </ul>
+
+          <ul class="signup_header__list right">
+            <li>
+              <a href="/#contacts" class="signup_header__link">Контакты</a>
+            </li>
+            <li>
+              <a href="/shop" class="signup_header__link">Магазин</a>
+            </li>
+            <li>
+              <a href="/user/cart/" class="signup_header__link">Корзина</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="header">
+                <div class="header__body">
+                    <a href="#" class="header__logo">
+                        <img id="logo" src="{% static 'shop/img/Logos/WS@72x-8.png' %}">
+                    </a>
+                    <div class="header__burger">
+                        <span></span>
+                    </div>
+                    <nav class="header__menu">
+                        <ul class="header__list">
+                            <li>
+                                <a href="/" class="header__link">Главная</a>
+                            </li>
+                            <li>
+                                {% if not user_id %}
+                                    <a href="/users/signup/" class="header__link">Профиль</a>
+                                {% else %}
+                                    <a href="/user/profile/{{user_id}}/" class="header__link">Профиль</a>
+                                {% endif %}
+                            </li>
+                            <li>
+                                <a href="/#gallery" class="header__link">Галерея</a>
+                            </li>
+                            <li>
+                                <a href="/#contacts" class="header__link">Контакты</a>
+                            </li>
+                            <li>
+                                <a href="/shop" class="header__link">Магазин</a>
+                            </li>
+                            <li>
+                                <a href="/user/cart/" class="header__link">Корзина</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% block content %}
+    <div class="content">
+      <div class="content__container" id="signup">
+        <img class="signup_logo" src="{% static 'shop/img/Logos/logo.png' %}" alt="">
+        <h2 class="welcome">Добро пожаловать в <br> здоровый образ жизни!</h2>
+        <h2 class="signup">Регистрация</h2>
+        <form action="" method="post" class="signup__form">
+          {% csrf_token %}
+          {% if messages %}
+              {% for message in messages %}
+              <p class="{{ message.tags }}">{{message}}</p>
+              {% endfor %}
+          {% endif %}
+          {{ signup.email }} <br>
+          {{ signup.username }} <br>
+          {{ signup.password1 }} <br>
+          {{ signup.password2}} <br>
+          <button type="submit">Зарегистрироваться</button>
+          <h3 class="account">Уже есть аккаунт?</h3>
+          <a href="/users/login" data-toggle="tab" class="account_link">Войти</a>
+          <div class="conditions">
+            <p>Продолжая, Вы принимаете наши<br>
+              <a href="" class="conditions_link">Условия конфиденциальности</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+            crossorigin="anonymous"></script>
+    <script src="{% static 'shop/js/header.js' %}"></script>
+</body>
+</html>
