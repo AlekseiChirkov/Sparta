@@ -53,7 +53,7 @@
                 </tr>
             {% for item in items %}
                 <tr class="products-row">
-                    <th><img class="table__image" src="{{item.product.imageURL}}" alt="product image"></th>
+                    <th><img class="table__image" src="{{item.product.imageURL}}" alt=""></th>
                     <th>{{ item.product.name }}</th>
                     <th>{{ item.product.price|floatformat:2}} сом</th>
                     <th>{{ item.quantity }}</th>

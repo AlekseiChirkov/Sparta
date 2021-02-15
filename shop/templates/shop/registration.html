@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'shop/css/desktop/registration.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/mobile/registration.css' %}">
 </head>
 <body>
     <div class="main_wrapper">
@@ -91,7 +92,7 @@
       <div class="content__container" id="signup">
         <img class="signup_logo" src="{% static 'shop/img/Logos/logo.png' %}" alt="">
         <h2 class="welcome">Добро пожаловать в <br> здоровый образ жизни!</h2>
-        <h2 class="signup">Регистрация</h2>
+        <h2 class="signup-h2">Регистрация</h2>
         <form action="" method="post" class="signup__form">
           {% csrf_token %}
           {% if messages %}
