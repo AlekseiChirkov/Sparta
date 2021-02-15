@@ -129,6 +129,11 @@ ul li a:hover{
     color: red;
 }
 @media(max-width: 768px){
+    .container{
+        margin: 100px auto 0 auto;
+        justify-content: center;
+        width: 100%;
+    }
     body.lock{
         overflow: hidden;
     }

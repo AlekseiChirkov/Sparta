@@ -186,7 +186,7 @@ body {
     font-size: 50px;
     font-style: normal;
     font-weight: normal;
-    line-height: 87%;
+    line-height: 100%;
     display: flex;
     align-items: center;
 }
@@ -995,9 +995,12 @@ body {
     letter-spacing: 0.7px;
     color: #FFFFFF;
     margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.privilege{
-    text-align: left;
+.privilege li{
+    text-align: center;
 }
 @media screen and (max-width: 1680px){
     .subs-list{
@@ -1243,6 +1246,13 @@ body {
     justify-content: space-around;
     margin-top: 100px;
 }
+.contacts-footer{
+    width: 90%;
+    margin: 0 auto;
+}
+.contacts-number{
+    line-height: 30px;
+}
 .info-1 p{
     font-family: 'Lato', sans-serif;
     font-style: normal;
@@ -1426,5 +1436,10 @@ body {
     }
     .con p{
         font-size: 18px;
+    }
+}
+@media screen and (max-width: 320px){
+    .info-2 #email{
+        font-size: 14px;
     }
 }

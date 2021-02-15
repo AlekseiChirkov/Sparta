@@ -261,7 +261,7 @@ ul li a:hover{
 }
 #id_name{
   width: 50%;
-  height: 50px;
+  height: 45px;
   border: 2px solid #fff;
   border-radius: 8px;
   background: none;
@@ -321,7 +321,7 @@ ul li a:hover{
         font-size: 1.5vw;
     }
     #id_name{
-        width: 100%;
+        width: 95%;
         font-size: 1.5vw;
     }
     #cart_btn{
@@ -348,7 +348,7 @@ ul li a:hover{
         font-size: 2.5vw;
     }
     #id_name{
-        width: 100%;
+        width: 95%;
         font-size: 2.5vw;
     }
     #cart_btn{
