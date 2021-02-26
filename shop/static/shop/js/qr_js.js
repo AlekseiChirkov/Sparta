@@ -13,7 +13,7 @@ const postVisit = () => {
   const userId = urlParams.get("userId");
 
   fetch(
-    `https://spartagym.com.kg/api/subscription-search/?user=${userId}`,
+    `https://spartagym.com.kg/subscription-check/?userId=${userId}`,
     {
       method: "GET",
       headers: {
