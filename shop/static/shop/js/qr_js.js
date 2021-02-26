@@ -39,7 +39,7 @@ const postVisit = () => {
       }
       let formattedToday = formatDate(today)
 
-      fetch(`https://spartagym.com.kg/subscription/${userData.customer}/`, {
+      fetch(`https://spartagym.com.kg/subscription-check/${userData.customer}/`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
