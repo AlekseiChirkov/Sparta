@@ -13,7 +13,7 @@ const postVisit = () => {
   const userId = urlParams.get("userId");
 
   fetch(
-    `http://localhost:8000/api/subscription-search/?user=${userId}`,
+    `https://spartagym.com.kg/api/subscription-search/?user=${userId}`,
     {
       method: "GET",
       headers: {
@@ -39,7 +39,7 @@ const postVisit = () => {
       }
       let formattedToday = formatDate(today)
 
-      fetch(`http://localhost:8000/api/subscription/${userData.customer}/`, {
+      fetch(`https://spartagym.com.kg/api/subscription/${userData.customer}/`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
