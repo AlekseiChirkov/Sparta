@@ -18,13 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    # admin
     path('admin/', admin.site.urls),
-
-    # allauth
-    path('accounts/', include('allauth.urls')),
-
-    # apps
     path('users/', include('users.urls')),
     path('', include('shop.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('rest_auth/', include('rest_auth.urls')),
+    path('rest_auth/registration/', include('rest_auth.registration.urls')),
+    path('rest_framework/', include('rest_framework.urls')),
 ]
