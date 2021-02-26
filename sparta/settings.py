@@ -50,10 +50,16 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'shop.apps.ShopConfig',
 
+    # rest_framework
+    'rest_framework',
+    'rest_framework.authtoken',
+
     # django filters
     'django_filters',
 
-    # django allauth
+    # rest_auth
+    'rest_auth',
+    'rest_auth.registration',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
