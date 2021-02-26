@@ -43,6 +43,7 @@ const postVisit = () => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          "X-CSRFToken": csrftoken
         },
         body: JSON.stringify({
           customer: userData.customer,
