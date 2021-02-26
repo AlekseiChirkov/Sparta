@@ -163,7 +163,7 @@
       <button class="close-btn cancel" onclick="closeForm()">Закрыть</button>
   </div>
 
-
+  <script src="{% static 'shop/qr_js.js' %}"></script>
   <script>
     var qr = new VanillaQR({
         url: `https://spartagym.com.kg/subscription-check/?userId={{user.id}}`,
