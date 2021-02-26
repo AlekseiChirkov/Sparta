@@ -1,11 +1,16 @@
 from django.urls import path, include
 from django.contrib.staticfiles.urls import static
+from rest_framework import routers
 
 from . import views
+from users import views as user_views
 from sparta import settings
 
 app_name = 'shop'
 
+router = routers.DefaultRouter()
+router.register('subscription', views.SubscriptionViewSet)
+router.register('users', user_views.UserViewSet)
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -18,6 +23,10 @@ urlpatterns = [
 
     path('update-item/', views.update_item, name='update-item'),
     path('process-order/', views.process_order, name='process-order'),
+
+    path('api/', include(router.urls)),
+    path('api/subscription-search/', views.SubscriptionSearchListAPIView.as_view(), name='sub-search'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

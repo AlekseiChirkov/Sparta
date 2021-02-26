@@ -4,9 +4,16 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_protect
+from rest_framework.filters import SearchFilter
+from rest_framework.generics import ListAPIView
+from rest_framework.response import Response
+from rest_framework import viewsets, status
+from rest_framework.permissions import AllowAny
+from django_filters.rest_framework import DjangoFilterBackend
 
 from shop.filters import ProductFilter
 from shop.models import *
+from shop.serializers import SubscriptionSerializer
 from shop.forms import EditProfileModelForm
 from shop.utils import cart_data, guest_order
 
@@ -179,3 +186,41 @@ def profile(request, id):
 
 def subscription_check(request):
     return render(request, 'shop/qrcode_post_request.html')
+
+
+class SubscriptionViewSet(viewsets.ModelViewSet):
+    queryset = Subscription.objects.all()
+    serializer_class = SubscriptionSerializer
+    permission_classes = (AllowAny,)
+
+    def list(self, request, *args, **kwargs):
+        sub = self.queryset.all()
+        serializer = self.serializer_class(sub, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save(request=self.request.user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def update(self, request, *args, **kwargs):
+        partial = True
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=partial)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        return Response(serializer.data)
+
+
+class SubscriptionSearchListAPIView(ListAPIView):
+    permission_classes = (AllowAny,)
+    queryset = Subscription.objects.all()
+    serializer_class = SubscriptionSerializer
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    filterset_fields = [
+        'customer', 'id'
+    ]
+    search_fields = [
+        'customer', 'id'
+    ]
