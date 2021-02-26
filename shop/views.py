@@ -184,6 +184,7 @@ def profile(request, id):
     return render(request, 'shop/profile.html', context)
 
 
+@csrf_protect
 def subscription_check(request):
     return render(request, 'shop/qrcode_post_request.html')
 
