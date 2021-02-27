@@ -18,6 +18,7 @@ const postVisit = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        "X-CSRFToken": csrftoken
       },
     }
   ).then((response) => {
