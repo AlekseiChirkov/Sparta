@@ -1,0 +1,33 @@
+@media screen and (min-width: 768px) and (max-width: 7680px) {
+    .wrapper{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 786px){
+    .header__list{
+        padding: 100px 0;
+    }
+    .main_wrapper{
+        display: none;
+    }
+    .header__menu{
+        padding: 0;
+    }
+    .signup_logo{
+        width: 40%;
+        height: 40%;
+        margin: -28% auto 0 auto;
+    }
+    .content__container{
+        width: 80%;
+    }
+    .welcome{
+        width: 80%;
+        font-size: 16px;
+    }
+    .signup__form button{
+        width: 90%;
+        font-size: 12px;
+    }
+}

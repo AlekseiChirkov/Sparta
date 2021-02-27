@@ -4,7 +4,7 @@
     height: auto;
 }
 body{
-  background-image: url('img/backgrounds/shopbg.png');
+  background-color: rgba(0, 0, 0, .9);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
