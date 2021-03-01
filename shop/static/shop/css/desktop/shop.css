@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap');
 body{
   min-height: 100vh;
-  background-color: rgba(0, 0, 0, .9);
-  background-repeat: no-repeat;
-  background-position: center center;
+  background: rgba(0, 0, 0, .9) url("/static/shop/img/backgrounds/services.png") no-repeat center center;
   background-size: cover;
   padding: 0;
   margin: 0;
@@ -27,7 +25,7 @@ ul li a:hover{
 }
 .signup_header__menu a{
   text-decoration: none;
-  font-family: 'Lato' sans-serif;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -140,6 +138,7 @@ ul li a:hover{
     }
     .header__body{
         height: 100px;
+        position: fixed;
     }
     .header__logo{
         flex: 0 0 80px;
@@ -195,7 +194,7 @@ ul li a:hover{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: black;
+        background: none;
         padding: 110px 10px 20px 10px;
         transition: all 0.3s ease 0s;
     }
@@ -210,6 +209,9 @@ ul li a:hover{
     }
     .header__link{
         font-size: 24px;
+    }
+    .content{
+        margin: 100px 0 0 0;
     }
 }
 
@@ -334,7 +336,7 @@ ul li a:hover{
         width: 100%;
         display: grid;
         grid-template-columns: 1fr;
-        justify-content: space-around;\
+        justify-content: space-around;
     }
     .product_filters > *{
         margin: 5px 0;
@@ -392,74 +394,92 @@ ul li a:hover{
 }
 
 
-
-.price{
-  width: 100%;
-  float: right;
-  font-family: 'Lato', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 14px;
-  text-align: center;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  background-repeat: no-repeat;
+.product-card{
+    height: 242px;
+    margin: 10px 0;
 }
-.pricebg{
-  padding: 10px 0;
-  float: right;
-  width: 40%;
-  background: rgba(0, 0, 0, 0.9);
+.product-header{
+    height: 80%;
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: rgba(0,0,0,.9);
+}
+.product-price{
+    width: 35%;
+    height: 100%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: rgba(0,0,0,.8);
+}
+.price{
+    margin: 25px auto auto auto;
 }
 .cart_button{
-  color: #FF007A;
+    width: 90%;
+    margin: auto auto 25px auto;
+    height: auto;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: none;
+    border: 2px solid #FFFFFF;
 }
-.details{
-  color: #fff;
-  background: linear-gradient(101.18deg, #FF2E00 -18.4%, #FF007A 112.98%);
+.product-footer{
+    display: flex;
+    justify-content: space-between;
+
 }
-.button{
-  font-family: 'Lato', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 10px;
-  line-height: 24px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  border: none;
-  width: 104px;
-  height: 32px;
-  margin: 0 auto;
+.product-footer > *{
+    font-weight: bold;
 }
-.name{
-  margin: 150px 0 0 0;
-  font-family: 'Lato', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  display: block;
+.product-name, .product-description{
+    display: flex;
+    flex-direction: column;
 }
-.left{
-  display: flex;
-  justify-content: space-between;
+.product-name{
+    font-style: normal;
+    font-size: 18px;
+    line-height: 29px;
+    align-items: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: left;
 }
-.right{
-  display: flex;
-  justify-content: space-between;
+.product-type{
+    color: #707070;
 }
-.product__name, .product__type{ахаха
-  margin: 0;
-  padding: 0;
+.product-description{
+    font-style: normal;
+    font-size: 18px;
+    line-height: 29px;
+    align-items: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: right;
 }
-.product__type{
-  color: #707070;
-}
-.product__span{
-  font-size: 14px;
+.product-description > div > span{
+    font-size: 10px;
+    font-weight: normal;
 }

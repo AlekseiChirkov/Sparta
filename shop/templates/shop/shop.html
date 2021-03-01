@@ -146,25 +146,37 @@
     <div class="products">
       <div class="products_container" id="products_container">
         {% for product in products %}
-        <div class="product product{{ forloop.counter }}">
-          <div class="price" style="background-image: url({{ product.image.url }})">
-            <div class="pricebg">
-              <h6>Цена</h6>
-              <h4 class="product__price">{{ product.price }}</h4>
-              <button data-product={{product.id}} data-action="add" class="button cart_button add_btn update_cart">В корзину</button><br>
-              <button class="button details">Подробнее</button>
+        <div class="product-card">
+            <div class="product-header"
+                 style="background-image: url('{{ product.image.url }}')">
+                <div class="product-price">
+                    <div class="price">
+                        Цена <br>
+                        {{ product.price}}
+                    </div>
+                    <button data-product={{product.id}}
+                            data-action="add"
+                            class="button cart_button add_btn update_cart">
+                        В корзину
+                    </button>
+                </div>
             </div>
-          </div><br>
-          <div class="name">
-            <div class="left">
-              <h5 class="product__name">{{ product.name }}</h5>
-              <h5 class="product__weight"><span class="product__span">Вес</span> {{ product.weight }} kg</h5>
+            <div class="product-footer">
+                <div class="product-name">
+                    <div>
+                        <span class="name">{{product.name}}</span>
+                        <br>
+                        <span class="product-type">{{product.product_type}}</span>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <div>
+                        <span>Вес</span> {{product.weight}}kg
+                        <br>
+                        <span>Порций</span> {{product.portions}}
+                    </div>
+                </div>
             </div>
-            <div class="right">
-              <h5 class="product__type">{{ product.product_type }}</h5>
-              <h5 class="product__portions"><span class="product__span">Порций</span> {{ product.portions }}</h5>
-            </div>
-          </div>
         </div>
         {% endfor %}
       </div>

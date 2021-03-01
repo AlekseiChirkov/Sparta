@@ -3,11 +3,11 @@
     font-family: 'Lato', sans-serif;
 }
 body{
-    background: rgba(0, 0, 0, .9) url("/static/shop/img/backgrounds/description.png") no-repeat center center;
+    background: rgba(0, 0, 0, .9) url("/static/shop/img/backgrounds/services.png") no-repeat center center;
     background-size: cover;
     padding: 0;
     margin: 0;
-    height: auto;
+    height: 100vh;
     font-family: 'Lato', sans-serif;
 }
 ul li a:hover{
