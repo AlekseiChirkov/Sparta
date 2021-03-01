@@ -200,6 +200,7 @@ ul li a:hover{
     }
     .header__menu.active{
         top: 0;
+        background-color: #000000;
     }
     .header__list{
         display: block;
