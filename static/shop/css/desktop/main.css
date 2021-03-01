@@ -98,10 +98,7 @@ body {
     flex-direction: row;
     align-items: center;
     position: relative;
-    background-image: url("/static/shop/img/backgrounds/me_bg.png");
-    background-color: rgba(0,0,0,.5);
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: url("/static/shop/img/backgrounds/description.png") rgba(0,0,0,.9) no-repeat center center;
     background-size: cover;
 }
 .description h1{
@@ -369,10 +366,8 @@ body {
     padding: 100px 0;
     text-align: center;
     position: relative;
-    background-color: rgba(0, 0, 0, .9);
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, .9) url("/static/shop/img/backgrounds/services.png") no-repeat top;
     background-size: cover;
-    background-position: top;
 }
 .subscription-head{
     text-align: center;
@@ -621,10 +616,8 @@ body {
 
 .news{
     padding: 100px 0;
-    background-color: rgba(0, 0, 0, .9);
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background: rgba(0, 0, 0, .9) url("/static/shop/img/backgrounds/blog.png") no-repeat top;
 }
 .news h2{
     font-family: 'Lato', sans-serif;

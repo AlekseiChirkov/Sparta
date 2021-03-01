@@ -11,13 +11,14 @@ const ERROR_SVG = `<svg width="150" height="151" viewBox="0 0 150 151" fill="non
 const postVisit = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const userId = urlParams.get("userId");
+  console.log(userId);
 
   fetch(
-    `https://spartagym.com.kg/api/subscription-search/?userId=${userId}`,
+    `https://spartagym.com.kg/api/subscription-search/?user=${userId}`,
     {
       method: "GET",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
     }
   ).then((response) => {

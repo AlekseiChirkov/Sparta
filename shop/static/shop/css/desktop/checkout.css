@@ -111,6 +111,9 @@
     .summary a:hover{
         text-decoration: none;
     }
+    .checkout-container{
+        margin: 100px auto 0 auto;
+    }
 }
 
 
