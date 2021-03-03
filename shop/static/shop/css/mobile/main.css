@@ -310,9 +310,6 @@
     }
 }
 @media(max-width: 1680px){
-    .subscription-head h4{
-        font-size: 24px;
-    }
     .subscription-head h2{
         font-size: 36px;
     }
@@ -391,11 +388,11 @@
     }
 }
 @media screen and (max-width: 1680px){
+    .posts{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     .subs-list{
         margin: 20px auto;
-    }
-    .price h4{
-        font-size: 24px;
     }
     .subs-list{
         display: grid;
@@ -406,6 +403,14 @@
     .subs-list{
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 960px){
+    .posts{
+        grid-template-columns: 1fr 1fr;
+    }
+    .post{
+        margin: 0 auto;
     }
 }
 @media screen and (max-width: 768px){
@@ -427,83 +432,20 @@
         display: grid;
         grid-template-columns: 1fr;
     }
-}
-@media screen and (max-width: 1680px){
-    .news h2{
-        font-family: 'Lato', sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 36px;
-        line-height: 80%;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: #FFFFFF;
-    }
     .posts{
         grid-template-columns: 1fr;
     }
     .post{
-        width: 100%;
-        display: table-row;
-        justify-content: space-around;
-        margin-top: 50px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
         text-align: center;
     }
-    .post h4{
-        font-family: 'Lato', sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 200%;
-        align-items: center;
-        color: #F80759;
-        margin-top: 40px;
-    }
-    .post h2{
-        font-family: 'Lato', sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 133%;
-        align-items: center;
-        color: #FFFFFF;
-    }
-    .text{
-        font-family: 'Lato', sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 171%;
-        align-items: center;
-        color: #FFFFFF;
-        margin: 0 auto;
+    .post h2, h4, h6{
+        text-align: center;
     }
 }
 @media screen and (max-width: 768px){
     .news{
         padding: 50px 0;
-    }
-    .posts{
-        padding: 0;
-    }
-    .post{
-        width: 80%;
-        margin: 0 auto;
-    }
-    .post h4{
-        font-size: 28px;
-    }
-    .post p{
-        width: 100%;
-        font-size: 18px;
-        margin: 25px auto;
-    }
-    .post h2{
-        font-size: 14px;
     }
 }
 @media(max-width: 1680px){
@@ -536,9 +478,6 @@
     }
     .info-3{
         margin-top: 100px;
-    }
-    .con h4{
-        font-size: 36px;
     }
     .con h2 a{
         font-size: 28px;

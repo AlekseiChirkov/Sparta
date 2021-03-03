@@ -87,8 +87,21 @@ body {
 
 
 
-
-
+.sub-title{
+    text-align: center;
+    color: #12C2E9;
+}
+.border-bottom{
+    width: 100px;
+    height: 2px;
+    margin: 0 auto;
+    border: none;
+    background: linear-gradient(90deg, #E100FF 0%, #F80759 100%), #ED213A;
+    background-blend-mode: multiply, normal;
+}
+.margin-h2{
+    margin: 25px 0;
+}
 .description{
     padding: 200px 15% 200px 5%;
     font-family: 'Lato', sans-serif;
@@ -137,10 +150,13 @@ body {
     color: #fff;
     font-family: 'Lato', sans-serif;
 }
-.description-logo img{
+.description__logo{
     width: 406px;
     height: 413px;
     top: 194px;
+    background: none;
+    -webkit-filter: drop-shadow(0px 0px 500px rgb(250, 0, 0));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
 
@@ -160,18 +176,6 @@ body {
 }
 .left{
     width: 40%;
-}
-.left h5{
-    letter-spacing: 0.9px;
-    display: flex;
-    align-items: center;
-    color: #12C2E9;
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
-    color: #12C2E9;
 }
 .left h2{
     margin-top: 50px;
@@ -219,14 +223,6 @@ body {
 }
 .h2{
     text-align: center;
-}
-.h2 h5{
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
-    color: #12C2E9;
 }
 .h2 h2{
     font-family: 'Lato', sans-serif;
@@ -372,18 +368,7 @@ body {
 .subscription-head{
     text-align: center;
 }
-.subscription-head h4{
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 133%;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.9px;
-    color: #12C2E9;
-}
-.subscription-head h2{
+.subscription-head > h2{
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -531,17 +516,6 @@ body {
 .price-h{
     text-align: center;
 }
-.price-h h4{
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 133%;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.9px;
-    color: #12C2E9;
-}
 .price-h h2{
     font-family: 'Lato', sans-serif;
     font-style: normal;
@@ -553,10 +527,8 @@ body {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #FFFFFF;
-    margin-top: 30px;
 }
 .subs{
-    border: solid 5px #ED213A;
     width: 400px;
     margin: 20px auto;
 }
@@ -574,7 +546,7 @@ body {
 }
 .subs-list{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .subs-title{
     background: linear-gradient(90deg, #E100FF 0%, #F80759 100%), #ED213A;
@@ -594,7 +566,7 @@ body {
     margin-top: 30px;
 }
 .subs ol{
-    width: 85%;
+    width: 60%;
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -610,14 +582,16 @@ body {
 }
 .privilege li{
     text-align: center;
+    word-break: normal;
 }
 
 
 
 .news{
-    padding: 100px 0;
-    background-size: cover;
-    background: rgba(0, 0, 0, .9) url("/static/shop/img/backgrounds/blog.png") no-repeat top;
+    height: auto;
+    padding: 20px 0;
+    background-size: 100% 100%;
+    background: rgba(0, 0, 0,.9);
 }
 .news h2{
     font-family: 'Lato', sans-serif;
@@ -633,44 +607,53 @@ body {
 }
 .posts{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
-    padding: 0 100px;
+    margin: 25px 0;
 }
 .post{
-    text-align: center;
+    width: 250px;
+    margin: 0 auto;
+}
+.post img{
+    width: 250px;
+    height: 250px;
+}
+.post h6{
+    margin: 10px auto;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 24px;
+    color: #F80759;
 }
 .post h4{
     font-family: 'Lato', sans-serif;
     font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.post p{
+    margin: 10px auto;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 200%;
-    align-items: center;
-    color: #F80759;
-    margin-top: 40px;
-    width: 100%;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
 }
 .post h2{
     font-family: 'Lato', sans-serif;
     font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 133%;
-    align-items: center;
-    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 24px;
+    text-align: left;
+    color: #F80759;
 }
-.text{
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 171%;
-    align-items: center;
-    color: #FFFFFF;
-    width: 95%;
-}
-
 
 
 .contacts{
@@ -681,71 +664,36 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: center;
 }
-.con h4{
+.con{
     font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 133%;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.9px;
-    color: #12C2E9;
-}
-.con h2{
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 50%;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    margin-top: 50px;
-}
-.con p{
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
+    font-style: italic;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 167%;
-    align-items: center;
+    font-size: 24px;
     text-align: center;
+    line-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #FFFFFF;
-    margin-top: 50px;
-}
-.con button{
-    background: linear-gradient(90deg, #E100FF 0%, #F80759 100%), #ED213A;
-    background-blend-mode: multiply, normal;
-    font-family: 'Lato', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: #FEFEFE;
-    margin-top: 70px;
-    width: 172px;
-    height: 60px;
-    border-radius: 10px;
-    border: none;
-    justify-content: space-around;
 }
 .contacts-info{
+    margin: 50px 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 100px;
+    justify-content: center;
 }
 .contacts-footer{
-    width: 90%;
-    margin: 0 auto;
+    margin: 25px auto 0 auto;
+    line-height: 40px;
 }
 .contacts-number{
     line-height: 30px;
 }
+.info-1{
+    text-align: left;
+    margin: 0 auto;
+}
 .info-1 p{
+    width: 90%;
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -755,6 +703,7 @@ body {
     color: #BDC3C7;
 }
 .info-1 h3{
+    margin: 30px 0 0 0;
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -762,6 +711,9 @@ body {
     line-height: 150%;
     align-items: center;
     color: #BDC3C7;
+}
+.info-2{
+    text-align: left;
 }
 .info-2 h3{
     font-family: 'Lato', sans-serif;
@@ -789,6 +741,9 @@ body {
     color: white;
     text-decoration: none;
 }
+.info-3{
+    width: 70%;
+}
 .info-3 img{
     width: 200px;
     height: 210px;
@@ -811,7 +766,6 @@ body {
 }
 .socialIcons {
     padding: 0;
-    margin: 0;
     list-style: none;
     display: inline-block;
     position: relative;
@@ -820,8 +774,6 @@ body {
     bottom: 0;
     left: 0;
     margin: auto;
-    height: 90px;
-    text-align: center;
 }
 .socialIcons li {
     display: inline-block;
@@ -830,9 +782,7 @@ body {
 .socialIcons li a {
     text-align: center;
     display: inline-block;
-    font-size: 4rem;
-    height: 100px;
-    width: 100px;
+    font-size: 50px;
     line-height: 100px;
     color: #BDC3C7;
     transition: all .5s ease;

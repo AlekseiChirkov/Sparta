@@ -44,7 +44,9 @@ class Product(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=64)
+    sub_title = models.CharField(max_length=64, null=True, blank=True)
     text = models.TextField(max_length=1024)
+    image = models.ImageField(null=True, blank=True, upload_to='sparta/news')
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -66,7 +68,7 @@ class PriceList(models.Model):
         ('Самостоятельные тренировки', 'Самостоятельные тренировки')
     )
     training_type = models.CharField(choices=TYPES, max_length=64)
-    price = models.IntegerField()
+    price = models.CharField(max_length=64)
     description_1 = models.CharField(max_length=64, blank=True, null=True)
     description_2 = models.CharField(max_length=64, blank=True, null=True)
     description_3 = models.CharField(max_length=64, blank=True, null=True)

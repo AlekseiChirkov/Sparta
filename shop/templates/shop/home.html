@@ -84,7 +84,7 @@
             <form action="/users/signup/"><button type="submit">Начать!</button></form>
         </div>
         <div class="description-logo">
-            <img src="{% static 'shop/img/Logos/logo.png' %}" alt="">
+            <img class="description__logo" src="{% static 'shop/img/Logos/logo.svg' %}" alt="">
         </div>
     </div>
 
@@ -92,7 +92,7 @@
 
     <div class="about-us">
         <div class="left">
-            <h5>О Sparta GYM</h5>
+            <h4 class="sub-title">О Sparta GYM</h4>
             <h2>ДОБРО ПОЖАЛОВАТЬ В<br>ЗДОРОВЫЙ ОБРАЗ ЖИЗНИ!</h2>
             <p>
                 Наш зал SpartA GYM был основан в 2014 году, в качестве закрытого клуба "Только для своих".
@@ -115,8 +115,9 @@
 
     <div class="about-coach">
         <div class="h2">
-            <h5>Знакомьтесь</h5>
-            <h2>НАШ ТРЕНЕР</h2>
+            <h4 class="sub-title">Знакомьтесь</h4>
+            <h2 class="margin-h2">НАШ ТРЕНЕР</h2>
+            <hr class="border-bottom">
         </div>
         <div class="coach">
             <div class="slider">
@@ -150,8 +151,9 @@
 
     <div class="subscription">
         <div class="subscription-head">
-            <h4>Выберите</h4>
-            <h2>ПРОГРАММУ ТРЕНИРОВОК</h2>
+            <h4 class="sub-title">Выберите</h4>
+            <h2 class="margin-h2">ПРОГРАММУ ТРЕНИРОВОК</h2>
+            <hr class="border-bottom">
         </div>
         <div class="subscription-types">
             <div class="subscription-type1">
@@ -187,9 +189,6 @@
 
 
     <div class="gallery" id="gallery">
-       <div class="gallery-h2">
-           <h2>Галерея</h2>
-       </div>
        <div class="gallery-img">
            <img src="{% static 'shop/img/Gallery/4.webp' %}">
            <img src="{% static 'shop/img/Gallery/5.webp' %}">
@@ -202,13 +201,14 @@
 
     <div class="price">
         <div class="price-h">
-            <h4>Прайс-лист</h4>
-            <h2>НАШИ ЦЕНЫ</h2>
+            <h4 class="sub-title">Прайс-лист</h4>
+            <h2 class="margin-h2">НАШИ ЦЕНЫ</h2>
+            <hr class="border-bottom">
         </div>
         <div class="subs-list">
             {% for price in prices %}
                 <div class="subs">
-                    <h2>{{ price.price }} сом/месяц</h2>
+                    <h2>{{ price.price }}</h2>
                     <div class="subs-title">{{ price.training_type }}</div>
                     <ol start="1" class="privilege">
                         <li>{{ price.description_1 }}</li>
@@ -233,10 +233,14 @@
 
 
     <div class="news">
-        <h2>Новости</h2>
+        <h4 class="sub-title">Галерея</h4>
+        <h2 class="margin-h2">НОВОСТИ</h2>
+        <hr class="border-bottom">
         <div class="posts">
         {% for post in posts %}
             <div class="post">
+                <img src="{{ post.image.url }}" alt="">
+                <h6>{{ post.sub_title }}</h6>
                 <h4>{{ post.title }}</h4>
                 <p class="text">{{ post.body }}</p>
                 <h2>{{ post.date }}</h2>
@@ -248,15 +252,14 @@
 
 
     <div class="contacts" id="contacts">
-        <div class="con">
-            <h4>Контакты</h4>
-            <h2><a class="contacts-number" href="tel: 0551-06-43-47">+996 551 06 43 47</a></h2>
-            <p>Как впечатления? Понравилось? Тогда приходи к нам в зал и начни совершенствоваться!<br>Измени свою жизнь в лучшую сторону!</p>
-            <form action="/train-constructor"><button type="submit">Составить программу</button></form>
-        </div>
+        <div class="con">Контакты</div>
         <div class="contacts-info">
             <div class="info-1">
-                <p>Хотите знать больше о нас? Тогда подписывайтесь на наши соцсети!</p>
+                <p>
+                    Как впечатления? Понравилось? Тогда приходи к нам в зал и начни совершенствоваться!
+                    <br>Измени свою жизнь в лучшую сторону!<br>
+                    Хотите знать больше о нас? Тогда подписывайтесь на наши соцсети!
+                </p>
                 <h3>Следите за нами!</h3>
                 <ul class="socialIcons">
                     <li>
@@ -282,7 +285,6 @@
                 </ul>
             </div>
             <div class="info-2">
-                <h3>Контакты</h3>
                 <div class="contacts-footer">
                     <a href="https://go.2gis.com/02g2c">Проспект Манаса 40  (пересечение с улицей Киевская)</a><br>
                     <a href="tel: 0551-06-43-47">+996 551 06 43 47</a><br>

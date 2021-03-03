@@ -19,7 +19,7 @@ from shop.utils import cart_data, guest_order
 
 
 def home(request):
-    posts = Post.objects.order_by('date')[:3]
+    posts = Post.objects.order_by('date')[:4]
     prices = PriceList.objects.all()
     user_id = request.user.id
     context = {
