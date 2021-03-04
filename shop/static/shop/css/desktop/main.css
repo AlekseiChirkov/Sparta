@@ -114,15 +114,20 @@ body {
     background: url("/static/shop/img/backgrounds/description.png") rgba(0,0,0,.9) no-repeat center center;
     background-size: cover;
 }
-.description h1{
-    color: #12C2E9;
+.description-header {
+    color: #FFFFFF;
     font-family: 'Lato', sans-serif;
-    font-size: 50px;
     font-style: normal;
-    font-weight: normal;
-    line-height: 100%;
-    display: flex;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 40px;
     align-items: center;
+}
+.description-header > .sport{
+    color: #12C2E9;
+}
+.description-header > *{
+    font-size: 50px;
 }
 .description p{
     color: #FFFFFF;
