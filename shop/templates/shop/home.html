@@ -92,7 +92,7 @@
 
     <div class="about-us">
         <div class="left">
-            <h4 class="sub-title">О Sparta GYM</h4>
+            <h4 class="sub-title sub-title-about">О Sparta GYM</h4>
             <h2>ДОБРО ПОЖАЛОВАТЬ В<br>ЗДОРОВЫЙ ОБРАЗ ЖИЗНИ!</h2>
             <p>
                 Наш зал SpartA GYM был основан в 2014 году, в качестве закрытого клуба "Только для своих".
@@ -254,48 +254,81 @@
     <div class="contacts" id="contacts">
         <div class="con">Контакты</div>
         <div class="contacts-info">
-            <div class="info-1">
+            <div class="icons-block">
                 <p>
-                    Как впечатления? Понравилось? Тогда приходи к нам в зал и начни совершенствоваться!
-                    <br>Измени свою жизнь в лучшую сторону!<br>
-                    Хотите знать больше о нас? Тогда подписывайтесь на наши соцсети!
+                Как впечатления? Понравилось? Тогда приходи к нам в зал и начни совершенствоваться!
+                <br>Измени свою жизнь в лучшую сторону!<br>
+                Хотите знать больше о нас? Тогда подписывайтесь на наши соцсети!
                 </p>
-                <h3>Следите за нами!</h3>
-                <ul class="socialIcons">
-                    <li>
-                        <a class="facebook" href="#">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="twitter" href="#">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="instagram" href="https://www.instagram.com/sparta.gym.kg/">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="youtube" href="https://www.youtube.com/channel/UCEDDs4JDyge_-Cmj2z_Ko4A">
-                            <i class="fa fa-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
+                <h3 class="watch-us">Следите за нами!</h3>
+                <a class="facebook" href="#">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="twitter" href="#">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="instagram" href="https://www.instagram.com/sparta.gym.kg/">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a class="youtube" href="https://www.youtube.com/channel/UCEDDs4JDyge_-Cmj2z_Ko4A">
+                    <i class="fa fa-youtube"></i>
+                </a>
             </div>
-            <div class="info-2">
-                <div class="contacts-footer">
-                    <a href="https://go.2gis.com/02g2c">Проспект Манаса 40  (пересечение с улицей Киевская)</a><br>
-                    <a href="tel: 0551-06-43-47">+996 551 06 43 47</a><br>
-                    <a href="https://spartagym.com.kg/">www.sparta-gym.com.kg</a><br>
-                    <a href="mailto: sparta.gym.com.kg@gmail.com" id="email">sparta.gym.com.kg@gmail.com</a>
-                </div>
+            <div class="contacts-block">
+                <a href="https://go.2gis.com/02g2c">
+                    <img src="{% static 'shop/img/icons/address_icon.svg' %}" alt="">
+                    <span>Проспект Манаса, дом 40</span>
+                </a><br>
+                <a href="tel: 0551-06-43-47">
+                    <img src="{% static 'shop/img/icons/phone_icon.svg' %}" alt="">
+                    <span>+996 551 06 43 47</span>
+                </a><br>
+                <a href="https://spartagym.com.kg/">
+                    <img src="{% static 'shop/img/icons/site_icon.svg' %}" alt="">
+                    <span>www.sparta-gym.com.kg</span>
+                </a><br>
+                <a href="mailto: sparta.gym.com.kg@gmail.com" id="email">
+                    <img src="{% static 'shop/img/icons/email_icon.svg' %}" alt="">
+                    <span>sparta.gym.com.kg@gmail.com</span>
+                </a>
             </div>
-            <div class="info-3">
+            <div class="logo-block">
                 <img src="{% static 'shop/img/Logos/logo.png' %}" alt="">
             </div>
         </div>
+    </div>
+
+    <div class="footer">
+        <ul class="footer-links">
+            <li>
+                <a href="/" class="footer-link">Главная</a>
+            </li>
+            <li>
+                {% if not user_id %}
+                <a href="/users/signup/" class="footer-link">Профиль</a>
+                {% else %}
+                <a href="/user/profile/{{user_id}}/" class="footer-link">Профиль</a>
+                {% endif %}
+            </li>
+            <li>
+                <a href="/#gallery" class="footer-link">Галерея</a>
+            </li>
+            <li>
+                <a href="/#contacts" class="footer-link">Контакты</a>
+            </li>
+            <li>
+                <a href="/shop/" class="footer-link">Магазин</a>
+            </li>
+            <li>
+                <a href="/user/cart/" class="footer-link">Корзина</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="copyright">
+        <a href="#">
+            Copyright &copy; 2019. All rights reserved. ALTERRA Creative Agency
+        </a>
     </div>
     {% endblock %}
 

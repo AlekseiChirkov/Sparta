@@ -7,6 +7,7 @@
   <title>Document</title>
   {% load static %}
   <link rel="stylesheet" href="{% static 'shop/css/desktop/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'shop/css/mobile/profile.css' %}">
   <script src="{% static 'shop/js/VanillaQR.min.js' %}"></script>
   <script type="text/javascript">
     var user = '{{request.user}}'
@@ -122,28 +123,30 @@
     <div class="subscription">
         <div id="subscription" class="subscription__card">
             <div class="abonement">Абонемент</div>
-            <div class="qr" id="qr"></div>
-            <div class="visits">
-                {% if subscription %}
-                    {% if dates %}
-                        {% for date in dates %}
+            <div class="subscription">
+                <div class="qr" id="qr"></div>
+                <div class="visits">
+                    {% if subscription %}
+                        {% if dates %}
+                            {% for date in dates %}
+                                <div class="dates">
+                                    <h5>Посещение<br>№{{ forloop.counter }}</h5>
+                                    <h6>{{ date }}</h6>
+                                </div>
+                            {% endfor %}
+                        {% else %}
                             <div class="dates">
-                                <h5>Посещение<br>№{{ forloop.counter }}</h5>
-                                <h6>{{ date }}</h6>
+                                <h6>Здесь будут показаны даты ваших посещений</h6>
                             </div>
-                        {% endfor %}
+                        {% endif %}
                     {% else %}
                         <div class="dates">
-                            <h6>Здесь будут показаны даты ваших посещений</h6>
+                            <h6 class="no-sub">
+                                У вас нет действующего абонемента
+                            </h6>
                         </div>
                     {% endif %}
-                {% else %}
-                    <div class="dates">
-                        <h6 class="no-sub">
-                            У вас нет действующего абонемента
-                        </h6>
-                    </div>
-                {% endif %}
+                </div>
             </div>
         </div>
     </div>
@@ -157,7 +160,7 @@
           <p>Фамилия: <br>{{ update.surname }}</p>
           <p>Телефон: <br>{{ update.phone }}</p>
           <p>Дата рождения: <br>{{ update.birthday }}</p>
-          <p>Аватар<br>{{ update.image }}</p>
+          <div class="avatar"><p>Аватар:</p><br>{{ update.image }}</div>
           <button type="submit" class="edit-btn">Изменить</button>
       </form>
       <button class="close-btn cancel" onclick="closeForm()">Закрыть</button>
@@ -168,7 +171,7 @@
         url: `https://spartagym.com.kg/subscription-check/?userId={{user.id}}`,
         size: 200,
         colorLight: "#ffffff",
-        colorDark: "#000000",
+        colorDark: "#FF007A",
         toTable: false,
         ecclevel: 1,
         noBorder: true,

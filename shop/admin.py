@@ -54,7 +54,7 @@ class ShippingAddressAdmin(admin.ModelAdmin):
 
 class SubscriptionAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Subscription._meta.fields]
-    readonly_fields = ('start_date', 'end_date', 'visit_dates')
+    readonly_fields = ('start_date', 'end_date')
 
     class Meta:
         model = Subscription

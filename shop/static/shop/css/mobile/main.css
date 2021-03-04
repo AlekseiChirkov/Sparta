@@ -388,11 +388,15 @@
     }
 }
 @media screen and (max-width: 1680px){
+    .sub-title-about{
+        text-align: center;
+    }
     .posts{
         grid-template-columns: 1fr 1fr 1fr;
     }
     .subs-list{
         margin: 20px auto;
+        width: 100%;
     }
     .subs-list{
         display: grid;
@@ -403,14 +407,19 @@
     .subs-list{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+    .subs{
+        width: 95%;
     }
 }
 @media screen and (max-width: 960px){
     .posts{
         grid-template-columns: 1fr 1fr;
+        width: 100%;
     }
     .post{
-        margin: 0 auto;
+        margin: 20px auto;
     }
 }
 @media screen and (max-width: 768px){
@@ -418,7 +427,7 @@
         padding: 25px 0;
     }
     .subs{
-        width: 80%;
+        width: 100%;
     }
     .subs-list h2{
         font-size: 24px;
@@ -448,86 +457,56 @@
         padding: 50px 0;
     }
 }
-@media(max-width: 1680px){
-    .contacts-info{
-        flex-direction: column;
-        align-items: center;
-    }
-    .contacts-info{
-        margin: 50px 0 0 0;
-    }
-    .info-1 p{
-        font-size: 20px;
-        margin: 0;
-    }
-    .info-1 h3{
-        font-size: 150%;
-    }
-    .info-2{
-        margin-top: 50px;
-        font-size: 200%;
-    }
-    .info-2 h3{
-        font-size: 36px;
-    }
-    .info-2 p{
-        font-size: 24px;
-    }
-    .info-2 a{
-        font-size: 100%;
-    }
-    .info-3{
-        margin-top: 100px;
-    }
-    .con h2 a{
-        font-size: 28px;
-        color: white;
-    }
-    .con p{
-        font-size: 20px;
-        width: 80%;
-        margin: 50px auto;
-    }
-    .con button{
-        margin: 0;
-        font-size: 20px;
-        width: 200px;
-        height: 75px;
-    }
-}
+
 @media screen and (max-width: 768px){
-    .contacts{
-        padding: 50px 0;
+    .subs{
+        width: 95%;
     }
-    .contacts h4{
-        font-size: 28px;
+    .privilege li{
+        text-align: left;
     }
-    .contacts h3{
+    .contacts-info{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .icons-block{
         width: 90%;
         margin: 0 auto;
+        text-align: center;
     }
-    .contacts h2{
-        margin: 25px auto;
-        font-size: 20px;
-        width: 80%;
+    .icons-block > a{
+        margin: 0 10px;
     }
-    .contacts p{
-        width: 80%;
-        margin: 10px auto;
+    .watch-us{
+        margin: 20px auto 0 auto;
+        justify-content: center;
     }
-    .info-2 p{
-        width: 80%;
-        font-size: 18px;
+    .contacts-block{
+        width: 100%;
+        margin: 50px 0;
+        text-align: left;
+        line-height: 20px;
     }
-    #email{
-        font-size: 14px;
+    .contacts-block > a{
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
-    .con p{
-        font-size: 18px;
+    .contacts-block > a > *{
+        margin: auto 10px;
+        font-size: 16px;
+        align-items: center;
     }
-}
-@media screen and (max-width: 320px){
-    .info-2 #email{
-        font-size: 14px;
+    .logo-block > img{
+        width: 130px;
+        height: 150px;
+    }
+    .footer{
+        display: none;
+    }
+    .copyright > *{
+        text-align: center;
     }
 }
