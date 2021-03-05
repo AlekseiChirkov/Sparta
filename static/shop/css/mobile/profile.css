@@ -1,0 +1,76 @@
+@media screen and (max-width: 1080px){
+    .content{
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+    }
+    .profile{
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        background: #fff;
+        border-radius: 8px;
+        padding: 10px;
+    }
+}
+@media screen and (max-width: 860px){
+    .content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 25px;
+        width: 100%;
+        padding: 100px 0;
+    }
+    .profile{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        height: 100%;
+        width: 90%;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    .subscription__card{
+        width: 90%;
+    }
+    .logout-form{
+        grid-column: 1/3;
+    }
+    .visits{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (max-width: 768px){
+    .form-popup{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+    }
+}
+@media screen and (max-width: 720px){
+    .subscription{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+    .qr{
+        margin: 20px 0;
+    }
+}
+@media screen and (max-width: 560px){
+    .visits{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 360px){
+    .profile{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .visits{
+        grid-template-columns: 1fr;
+    }
+}

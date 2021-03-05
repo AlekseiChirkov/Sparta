@@ -429,15 +429,13 @@ ul li a:hover{
 }
 .cart_button{
     width: 90%;
-    margin: auto auto 25px auto;
     height: auto;
+    margin: auto auto 25px auto;
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
     line-height: 24px;
-    display: flex;
-    align-items: center;
     text-align: center;
     letter-spacing: 2px;
     text-transform: uppercase;

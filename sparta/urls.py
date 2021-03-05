@@ -16,6 +16,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +27,16 @@ urlpatterns = [
     path('rest_auth/', include('rest_auth.urls')),
     path('rest_auth/registration/', include('rest_auth.registration.urls')),
     path('rest_framework/', include('rest_framework.urls')),
+    # Django auth
+    path('reset-password/', auth_view.PasswordResetView.as_view(),
+         name='password_reset'),
+    path('reset-password/confirm/<uidb64>/<token>',
+         auth_view.PasswordResetConfirmView.as_view(),
+         name='password_reset_confirm'),
+    path('reset-password/complete/',
+         auth_view.PasswordResetCompleteView.as_view(),
+         name='password_reset_complete'),
+    path('reset-password/done/', auth_view.PasswordResetDoneView.as_view(),
+         name='password_reset_done'),
+
 ]

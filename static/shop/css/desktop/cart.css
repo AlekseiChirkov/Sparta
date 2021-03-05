@@ -4,9 +4,6 @@
     height: auto;
 }
 body{
-  background-color: rgba(0, 0, 0, .9);
-  background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
   padding: 0;
   margin: 0;
@@ -67,7 +64,7 @@ ul li a:hover{
 .header_logo{
   width: 190px;
   height: 95px;
-  box-shadow: 0 0 150px 50px #530026;
+  -webkit-filter: drop-shadow(0px 0px 15px rgba(120, 0, 0, 1));
 }
 @media screen and (min-width: 901px){
     .wrapper{
@@ -169,7 +166,6 @@ ul li a:hover{
         position: relative;
         width: 30px;
         height: 20px;
-        position: relative;
         z-index: 3;
     }
     .header__burger span{
@@ -248,6 +244,7 @@ ul li a:hover{
 .content{
     width: 90%;
     margin: auto;
+    -webkit-filter: drop-shadow(0px 0px 15px rgba(120, 0, 0, 1));
 }
 .products-list{
     width: 100%;
@@ -275,8 +272,9 @@ ul li a:hover{
     display: grid;
     margin: 0 0 0 10px;
 }
-
-
+tbody > tr{
+    margin: 10px 0;
+}
 .arrow {
   border: solid black;
   border-width: 0 3px 3px 0;
