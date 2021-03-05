@@ -14,6 +14,9 @@
       <button type="submit">Войти</button>
       <h3 class="account">Нет аккаунта?</h3>
       <a href="/users/signup" data-toggle="tab" class="account_link">Регистрация</a>
+      <a href="{% url 'password_reset' %}"
+         data-toggle="tab" class="account_link"
+         style="font-size: 12px">Не помню пароль</a>
       <div class="conditions">
         <p>Продолжая, Вы принимаете наши<br>
           <a href="" class="conditions_link">Условия конфиденциальности</a>
