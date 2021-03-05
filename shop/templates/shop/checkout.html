@@ -36,7 +36,7 @@
             </div>
             <hr>
             <div class="submit-button">
-                <input type="submit" id="form-button" class="shipping-button" value="Продолжить">
+                <input onclick="submitFormData()" type="submit" id="form-button" class="shipping-button" value="Продолжить">
             </div>
         </form>
     </div>
@@ -129,6 +129,9 @@
         document.getElementById('payment-info').classList.remove('hidden');
     });
 
+    document.getElementById('make-payment').addEventListener('click', function(e){
+        submitFormData();
+    })
     function submitFormData () {
         console.log('Payment button clicked')
 

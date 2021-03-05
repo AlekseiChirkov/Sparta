@@ -96,6 +96,7 @@ def update_item(request):
 def checkout(request):
     user_id = request.user.id
     user = request.user
+    print(user)
     data = cart_data(request)
     cart_items = data['cart_items']
     order = data['order']
