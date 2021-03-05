@@ -39,7 +39,7 @@ def signup_form(request):
                 mail_subject, message, to=[to_email]
             )
             email.send()
-            return HttpResponse('Пожалуйста, подтвердите ваш email, чтобы завершить регистрацию.')
+            return render(request, 'shop/email_confirmation.html')
     else:
         signup = UserCreationForm()
     return render(request, 'shop/registration.html', {'signup': signup, 'user_id': user_id})

@@ -388,11 +388,12 @@ ul li a:hover{
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 2px solid #000;
-    border-radius: 8px;
     color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
     background: #FF2E00;
     background: linear-gradient(350deg, #FF2E00 0%, #FF007A 100%);
+    -webkit-filter: drop-shadow(0px 0px 20px rgb(0, 0, 120));
 }
 .dates h5{
     width: 100%;
